@@ -27,7 +27,8 @@
 
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-#ifdef __cplusplus
+
+
 /**
 * 功能:对父子进程的一个抽象
 * @author wangqiang
@@ -141,4 +142,4 @@ private:
     jobject m_jobj;
 
 };
-#endif
+

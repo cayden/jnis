@@ -123,7 +123,7 @@ dependencies {
 ```
 ###3、运行效果
 运行后，显示了在c里面写的内容*I'm jni*
-<img src="http://img.blog.csdn.net/20160227160646604" width = "500" height = "880" alt="运行效果" align=center />
+<img src="http://img.blog.csdn.net/20160227160646604" width = "400" height = "680" alt="运行效果" align=center />
 但是回到项目目录下 发现没有看到生成的so文件 但是我们将apk反编译就可以看到，貌似as还是蛮强大的。
 可以看一下 反编译后的截图
 <img src="http://img.blog.csdn.net/20160227161042447" width = "500" height = "880" alt="反编译apk后" align=center />
