@@ -1,11 +1,6 @@
 //
 // Created by 崔冉 on 16/2/29.
 //
-
-#ifndef JNIS_PROCESS_H
-#define JNIS_PROCESS_H
-
-
 #include <jni.h>
 #include <sys/select.h>
 #include <unistd.h>
@@ -20,15 +15,17 @@
 #include <stdlib.h>
 //#include "constants.h"
 
+#ifndef JNIS_PROCESS_H
+#define JNIS_PROCESS_H
+
+
 
 #define LOG_TAG "Native"
 
 
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+
 
 /**
 * 功能:对父子进程的一个抽象
@@ -143,7 +140,5 @@ private:
     jobject m_jobj;
 
 };
-#ifdef __cplusplus
-}
-#endif
+
 #endif //JNIS_PROCESS_H

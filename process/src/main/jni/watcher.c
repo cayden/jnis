@@ -3,14 +3,14 @@
 //
 
 #include "com_cayden_process_Watcher.h"
-#include "process.h"
+#include "process1.h"
 #include "Utils.h"
 
 
 /**
 * 全局变量，代表应用程序进程.
 */
-//ProcessBase *g_process = NULL;
+ProcessBase *g_process = NULL;
 
 /**
 * 应用进程的UID.
