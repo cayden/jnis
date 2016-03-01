@@ -21,6 +21,11 @@ public class Watcher {
         if( !createWatcher(userId) )
         {
             Log.e("Watcher", "<<Monitor created failed>>");
+        }else{
+            Log.e("Watcher", "<<Monitor created success>>");
+          boolean flag= connectToMonitor();
+            Log.e("Watcher", "<<Monitor flag= "+flag+">>");
+//            sendMsgToMonitor("hello");
         }
     }
 

@@ -21,9 +21,9 @@ public class MainActivity extends Activity {
             PackageManager pm= getPackageManager();
             ApplicationInfo ai=pm.getApplicationInfo("com.cayden.process", PackageManager.GET_ACTIVITIES);
             String uid=String.valueOf(ai.uid);
-            Log.d(TAG, "!!" + ai.uid + ": ");
+            Log.d(TAG, "uid＝" + ai.uid);
             Watcher watcher=new Watcher(this);
-            Log.d(TAG,"$$$*$**$($*("+watcher.getTestStr());
+            Log.e(TAG,"jni return str:"+watcher.getTestStr());
             watcher.createAppMonitor(uid);
 
         }catch (Exception e){
