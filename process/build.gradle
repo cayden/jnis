@@ -25,11 +25,25 @@ android {
             ndk{
                 moduleName "monitor"             //生成的so名字
                 abiFilters "armeabi", "armeabi-v7a", "x86"  //输出指定三种abi体系结构下的so库。
+                ldLibs "log"
             }
         }
     }
+
+//    sourceSets.main {
+//        jni.srcDirs =[]
+//        jniLibs.srcDir 'src/main/jniLibs'
+//    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+//task ndkBuild(type: Exec) {
+//    commandLine 'ndk-build', '-C', file('src/main/jni').absolutePath
+//}
+//
+//tasks.withType(JavaCompile) {
+//    compileTask -> compileTask.dependsOn ndkBuild
+//}

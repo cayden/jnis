@@ -134,3 +134,8 @@ android.useDeprecatedNdk=true
 不出意外的话，再次编译工程，NDK环境这块就OK了。
 ####2) 报错：error: jni.h: No such file or directory
 解决办法：将compileSdkVersion和targetSdkVersion改成19就编译通过了
+####3) 报错：error: undefined reference to '__android_log_print'
+解决办法：则在build.gradle文件中添加如下的配置：
+```
+debug { ndk { ldLibs "log" } }
+```
