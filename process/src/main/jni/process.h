@@ -18,7 +18,6 @@
 #include <sys/un.h>
 #include <errno.h>
 #include <stdlib.h>
-//#include "constants.h"
 
 
 #define LOG_TAG "Native"
@@ -32,8 +31,6 @@
 
 /**
 * 功能:对父子进程的一个抽象
-* @author wangqiang
-* @date 2014-03-14
 */
 class ProcessBase
 {
@@ -105,8 +102,6 @@ protected:
 
 /**
 * 功能：父进程的实现
-* @author wangqiang
-* @date 2014-03-14
 */
 class Parent : public ProcessBase
 {
@@ -147,8 +142,6 @@ private:
 
 /**
 * 子进程的实现
-* @author wangqiang
-* @date 2014-03-14
 */
 class Child : public ProcessBase
 {

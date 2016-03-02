@@ -4,7 +4,6 @@
 
 #include "com_cayden_process_Watcher.h"
 #include "process.h"
-#include "Utils.h"
 
 
 /**
@@ -70,7 +69,7 @@ JNIEXPORT jboolean JNICALL Java_com_cayden_process_Watcher_createWatcher( JNIEnv
     g_process = new Parent( env, thiz );
 
     g_userId  = (const char*)jstringTostr(env, user);
-
+    LOGE("<<A message g_userId:%s>>", g_userId );
     g_process->catch_child_dead_signal();
 
     if( !g_process->create_child() )
