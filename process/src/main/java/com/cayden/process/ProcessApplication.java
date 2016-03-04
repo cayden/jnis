@@ -21,8 +21,6 @@ public class ProcessApplication extends Application {
         super.onCreate();
         Log.d(TAG, "onCreate");
 
-//        Intent intent=new Intent(this,NotificationService.class);
-//        startService(intent);
 
         systemEventReceiver=new SystemEventReceiver();
         IntentFilter localIntentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
