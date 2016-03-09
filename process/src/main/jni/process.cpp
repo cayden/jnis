@@ -246,10 +246,12 @@ void Child::handle_parent_die( )
 void Child::restart_parent()
 {
     LOGE("<<restart_parent enter>>");
-
+    LOGE("<<restart_parent g_userId: %s  serviceName: %s  >>", g_userId ,SERVICE_NAME);
 /**
 * TODO 重启父进程,通过am启动Java空间的任一组件(service或者activity等)即可让应用重新启动
- * huawei 4.2 测试ok
+ * ##huawei 4.2 测试ok
+ * ##xiaomi note 6.0 测试ok
+ * ##Galaxy S5 5.0 测试OK
 */
 //    execlp( "/system/bin/am",
 //            "am",
@@ -260,23 +262,27 @@ void Child::restart_parent()
 //            SERVICE_NAME, //注意此处的名称
 //            (char *)NULL);
 
-        execlp("am",
-            "am",
-            "start",
-            "--user",
-            "0",
-            "-n",
-            ACTIVITY_NAME, //注意此处的名称
-            (char *)NULL);
+//        execlp("am",
+//            "am",
+//            "start",
+//            "--user",
+//            "0",
+//            "-n",
+//            ACTIVITY_NAME, //注意此处的名称
+//            (char *)NULL);
     // Android4.2系统之后支持多用户操作，所以得指定用户
     //打开百度
 //    execlp("am", "am", "start", "--user", "0", "-a",
 //    "android.intent.action.VIEW", "-d",
 //    "http://www.baidu.com", (char*) NULL);
 
+    //popen
+//    popen("am start --user 0 -a android.intent.action.VIEW -d http://www.baidu.com","r");
+    popen("am start --user 0 -n com.cayden.process/com.cayden.process.ui.MainActivity","r");
+
 //    system("am startservice --user 0 -n com.cayden.process/com.cayden.process.service.NotificationService");
     LOGE("<<restart_parent exit>>");
-    LOGE("<<restart_parent g_userId: %s  serviceName: %s  >>", g_userId ,SERVICE_NAME);
+
 }
 
 void* Child::parent_monitor()

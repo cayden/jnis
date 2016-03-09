@@ -18,6 +18,7 @@
 #include <sys/un.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 
 #define LOG_TAG "Native"
